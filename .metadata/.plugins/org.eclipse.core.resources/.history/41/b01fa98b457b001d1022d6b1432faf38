@@ -1,0 +1,9 @@
+package Demos;
+
+public class StringMethods {
+public static void main(String[] args) {
+	
+	String word = "Word";
+	System.out.println (word.length());
+}
+}

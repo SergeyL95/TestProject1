@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;pages.FacebookJava&apos; to &apos;IndeedPage&apos;&#x0D;&#x0A;- Original project: &apos;HW&apos;&#x0D;&#x0A;- Original element: &apos;pages.FacebookJava&apos;&#x0D;&#x0A;- Renamed element: &apos;pages.IndeedPage&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;FacebookJava&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;pages{FacebookJava.java[FacebookJava" matchStrategy="1" name="IndeedPage" qualified="false" references="true" similarDeclarations="false" stamp="1680735943738" textual="false" version="1.0"/>
+</session>

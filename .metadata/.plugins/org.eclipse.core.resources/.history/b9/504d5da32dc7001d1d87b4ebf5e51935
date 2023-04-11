@@ -1,0 +1,33 @@
+package Demos;
+
+public class кузуфеув {
+	import java.util.*;
+
+	public class RepeatedWords {
+	    public static void main(String[] args) {
+	        String str = "This is a test string. This string is a test. test this";
+	        str = str.toLowerCase(); // Ignore case
+	        str = str.replaceAll("\\.", ""); // Remove periods ending sentences
+	        
+	        String[] words = str.split("\\s+");
+	        Map<String, Integer> wordCount = new HashMap<String, Integer>();
+	        
+	        // Count the number of times each word appears in the string
+	        for (String word : words) {
+	            if (wordCount.containsKey(word)) {
+	                wordCount.put(word, wordCount.get(word) + 1);
+	            } else {
+	                wordCount.put(word, 1);
+	            }
+	        }
+	        
+	        // Print out the repeated words and their counts
+	        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+	            if (entry.getValue() > 1) { // Only print words that appear more than once
+	                System.out.println(entry.getKey() + ": " + entry.getValue());
+	            }
+	        }
+	    }
+	}
+
+}

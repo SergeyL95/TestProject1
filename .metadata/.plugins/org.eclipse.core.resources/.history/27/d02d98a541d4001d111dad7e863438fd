@@ -1,0 +1,39 @@
+package tests;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import pages.BasePage;
+import utils.DataReader;
+import utils.Driver;
+
+public class DropDownTests {
+	public static void main(String[] args) {
+		
+		DropDownTests obj1 = new DropDownTests();
+		obj1.testCaseOne();
+		
+	}
+	
+	BasePage basePage;
+	
+	public void testCaseOne() {
+		
+		Driver.getDriver().get(DataReader.getProperty("baseUrl"));
+		Driver.getDriver().manage().window().maximize();
+		
+		Select selectOpt = new Select(basePage.searchDropDown);
+		List<WebElement> allOptions = selectOpt.getOptions();
+		if (allOptions.size()==58) {
+			System.out.println("DropDown size verification PASSED");
+		} else {
+			System.out.println("DropDown size verification FAILED");
+		}
+		
+		for (WebElement each : allOptions) {
+			System.out.println(each.getText());
+		}
+	}
+}

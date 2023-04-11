@@ -1,0 +1,35 @@
+package HomeWork;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class WeekendHomework {
+	public static void main(String[] args) {
+		String projectDir = System.getProperty("user.dir");
+		String driverPath = projectDir + "/drivers/chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", driverPath);
+		
+		WeekendHomework whObj1 = new WeekendHomework();
+		
+		whObj1.checkBoxes();
+		
+	}
+	
+	public static void checkBoxes() {
+		ChromeOptions ops = new ChromeOptions();
+		ops.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(ops);
+		
+		driver.get("http://practice.primetech-apps.com/practice/check-box");
+		
+		WebElement checkOne = driver.findElement(By.xpath("//input[@id='Java']"));
+		WebElement checkTwo = driver.findElement(By.xpath("//input[@id='JavaScript']"));
+		WebElement checkThree = driver.findElement(By.xpath("//input[@id='C#']"));
+		WebElement checkFour = driver.findElement(By.xpath("//input[@id='Python']"));
+		
+		checkOne.click();
+		
+	}
+}

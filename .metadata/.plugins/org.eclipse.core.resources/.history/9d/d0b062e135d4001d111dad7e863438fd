@@ -1,0 +1,25 @@
+package tests;
+
+import utils.Driver;
+import pages.BasePage;
+import utils.DataReader;
+
+public class TestCaseOne {
+	
+	BasePage basePage;
+	
+	public static void main(String[] args) {
+		
+		
+	}
+	
+	public void testCaseOne() {
+		
+		basePage = new BasePage();
+		
+		Driver.getDriver().get(DataReader.getProperty("baseUrl"));
+		Driver.getDriver().manage().window().maximize();
+		
+		basePage.newTabBtn.click();
+	}
+}

@@ -1,0 +1,11 @@
+import utils.Driver;
+import utils.DataReader;
+
+public class TestCaseOne {
+	public static void main(String[] args) {
+		
+		Driver.getDriver().get(DataReader.getProperty(baseUrl)));
+		Driver.getDriver().manage().window().maximize();
+		
+	}
+}

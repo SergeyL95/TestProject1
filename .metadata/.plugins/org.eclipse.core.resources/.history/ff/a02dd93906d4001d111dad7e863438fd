@@ -1,0 +1,18 @@
+package January26InheritanceAccessCheck;
+
+import January26InheritanceCont.Super;
+
+public class SubOutsidePackage extends Super{
+	
+	public void test() {
+		age = 10;
+		superTest();
+		name = "Sergey";
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}
+	
+}

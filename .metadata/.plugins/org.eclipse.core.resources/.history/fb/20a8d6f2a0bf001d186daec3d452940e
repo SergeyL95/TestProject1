@@ -1,0 +1,23 @@
+package ReviewSession;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class ReviewSessArrayList {
+public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		ArrayList<String> employees = new ArrayList<String>();
+		
+		employees.add("Mark");
+		employees.add("Jake");
+		employees.add("Lisa");
+		employees.add("Karl");
+		
+		System.out.println(employees.toString());
+		
+		
+		
+	}
+}

@@ -1,0 +1,15 @@
+package Demos;
+
+public class StringMethods {
+	
+public static void main(String[] args) {
+	String word = "Word is ";
+	System.out.println (word.length());
+	
+	char c = word.charAt(2);
+	System.out.println(c);
+	
+	word.concat("java");
+	System.out.println(word);
+}
+}

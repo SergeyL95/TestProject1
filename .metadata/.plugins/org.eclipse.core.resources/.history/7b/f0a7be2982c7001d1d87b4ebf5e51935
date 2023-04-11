@@ -1,0 +1,26 @@
+package ClassActivity;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class XpathMethods {
+	public static void main(String[] args) {
+		
+		String projectDir = System.getProperty("user.dir");
+		String driverPath = projectDir + "/drivers/chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", driverPath);
+		
+	}
+	
+	public static void etsyCase() {
+		ChromeOptions ops = new ChromeOptions();
+		ops.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(ops);
+		
+		driver.get("https://etsy.com");
+		
+		driver.findElement(By.xpath("//button[contains(@class, 'select-signin')]")).click();
+	}
+}

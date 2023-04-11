@@ -1,0 +1,51 @@
+package HomeWork;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+
+public class HW_4April {
+	public static void main(String[] args) {
+		String projectDir = System.getProperty("user.dir");
+		String driverPath = projectDir + "/drivers/chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", driverPath);
+		
+		dragAndDropCase();
+	}
+	
+	public static void dragAndDropCase() {
+		ChromeOptions ops = new ChromeOptions();
+		ops.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(ops);
+		
+		driver.get("http://practice.primetech-apps.com/practice/drag-and-drop");
+		driver.manage().window().maximize();
+		Duration dur = Duration.ofSeconds(5);
+		driver.manage().timeouts().implicitlyWait(dur);
+		
+		WebElement header = driver.findElement(By.xpath("//h3[text()='Drag And Drop']"));
+		if (header.isDisplayed()) {
+			System.out.println("Header Validation PASSED");
+		} else {
+			System.out.println("Header Validation FAILED");
+		}
+
+		Actions actions = new Actions(driver);
+		
+		WebElement textElement = driver.findElement(By.id("text"));
+		WebElement textAreaElement = driver.findElement(By.id("textArea"));
+		WebElement numberElement = driver.findElement(By.id("Number"));
+		WebElement dropZone = driver.findElement(By.id("dropzone"));
+		
+		actions.dragAndDrop(textElement, dropZone);
+		actions.dragAndDrop(textAreaElement, dropZone);
+		actions.dragAndDrop(numberElement, dropZone);
+		
+		
+	}
+}

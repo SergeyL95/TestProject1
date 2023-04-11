@@ -1,0 +1,46 @@
+package Demos;
+
+public class StringMethods {
+	
+public static void main(String[] args) {
+	String word = "Word is ";
+	System.out.println (word.length());
+	
+	char c = word.charAt(2);
+	System.out.println(c);
+	
+	String concatedWord = word.concat("java");
+	System.out.println(concatedWord);
+	
+	String taskWord = "This task is ";
+	String taskWord2 = "DONE";
+	String taskWord3 = taskWord.concat(taskWord2);
+	System.out.println(taskWord3);
+	
+	String beforeTrim = "      Hey Whats Up            ";
+	String afterTrim = beforeTrim.trim();
+	System.out.println(afterTrim);
+	
+	String text = "I am SDET";
+	String textSub = text.substring(5);
+	System.out.println(textSub);
+	
+	String textSub2 = text.substring(5,7);
+	System.out.println(textSub2);
+	
+	String str1 = "Messi is the GOAT";
+	String str2 = str1.substring(0, 5);
+	System.out.println(str2);
+	String str3 = str1.substring(13);
+	System.out.println(str3);
+	
+	String wordsPattern = "Some Some random words";
+	int partOf = wordsPattern.indexOf("m"); //first approach is the index
+	System.out.println(partOf);
+	
+	System.out.println(wordsPattern.replace("Some", "Just some"));
+	
+	
+	
+}
+}

@@ -1,0 +1,28 @@
+package ClassActivity;
+
+public class ArrayMathcing {
+	public static void main(String[] args) {
+		
+		int[] nums1 = {3, 11, 23, 56, 2, 7};
+		int[] nums2 = {5, 11, 34, 21, 2, 7};
+		
+		mathcingNums(nums1, nums2);
+		
+	}
+	
+	public static int[] mathcingNums(int[] nums1, int[] nums2) {
+		
+		int[] nums3 = null;
+		
+		for (int i = 0; i < nums1.length; i++) {
+			for (int j = 0; j <nums2.length; i++) {
+				if (nums1[i]==nums2[j]) {
+					nums3[i] = nums1[i];
+				}
+			}
+		}
+		
+		return nums3;
+		
+	}
+}

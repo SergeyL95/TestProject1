@@ -1,0 +1,32 @@
+package tests;
+
+import utils.Driver;
+import java.util.Set;
+import pages.BasePage;
+import utils.DataReader;
+
+public class WindowsHandling {
+	
+	BasePage basePage;
+	
+	public static void main(String[] args) {
+		WindowsHandling obj1 = new WindowsHandling();
+		obj1.testCaseOne();
+	}
+	
+	public void testCaseOne() {
+		
+		basePage = new BasePage();
+		
+		Driver.getDriver().get(DataReader.getProperty("baseUrl"));
+		Driver.getDriver().manage().window().maximize();
+		
+		basePage.newTabBtn.click();
+		
+		Set<String> windowIds = Driver.getDriver().getWindowHandles();
+		
+		for (String ids : windowIds) {
+			System.out.println(ids);
+		}
+	}
+}

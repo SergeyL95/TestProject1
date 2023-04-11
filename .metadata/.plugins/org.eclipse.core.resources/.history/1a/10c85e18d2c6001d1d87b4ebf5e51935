@@ -1,0 +1,44 @@
+package HomeWork;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class XpathFacebook {
+	public static void main(String[] args) {
+		
+		String projectDir = System.getProperty("user.dir");
+		String driverPath = projectDir + "/drivers/chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", driverPath);
+		
+		XpathFacebook fbProj = new XpathFacebook();
+		//fbProj.facebookLogin();
+		fbProj.facebookSignUp();
+	}
+		
+		public void facebookLogin() {
+			ChromeOptions ops = new ChromeOptions();
+			ops.addArguments("--remote-allow-origins=*");
+			WebDriver driver = new ChromeDriver(ops);
+			
+			driver.get("https://facebook.com");
+			driver.findElement(By.xpath("//input[@type='text']")).sendKeys("Automation");
+			driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Automation");
+			driver.findElement(By.xpath("//button[@value='1']")).click();	
+	}
+		
+		public void facebookSignUp() {
+			ChromeOptions ops = new ChromeOptions();
+			ops.addArguments("--remote-allow-origins=*");
+			WebDriver driver = new ChromeDriver(ops);
+			
+			driver.get("https://facebook.com");
+			driver.findElement(By.xpath("//a[@ajaxify='/reg/spotlight/']")).click();
+			driver.findElement(By.xpath("//input[@name='firstname'")).sendKeys("Automation");
+			driver.findElement(By.xpath("//input[@name='lastname'")).sendKeys("Automation");
+			driver.findElement(By.xpath("//input[@name='reg_email__'")).sendKeys("Automation");
+			driver.findElement(By.xpath("//input[@name='new-password'")).sendKeys("Automation");
+			driver.findElement(By.xpath("//button[@type='submit'")).click();
+		}
+}
